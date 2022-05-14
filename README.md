@@ -9,7 +9,7 @@ Rendering of Random RGBA pixels in Real-time using [Walnut](https://github.com/T
     RTweekend/src/BasicRenderMain.cpp
     Render();
     ```
-    ![Random RGB Render](assets\images\RandomRenderRGB.PNG "Random RGBA")
+    ![Random RGB Render](/assets/images/RandomRenderRGB.PNG "Random RGBA")
 
 
 ## Credits

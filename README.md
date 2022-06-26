@@ -21,7 +21,7 @@ Rendering of uv co-ordinate mechanism using Red and Green channels and restrucut
     ```
     ![Pixel Coordinates RG Channels](/assets/images/PixelationUVCoordinates.png)
 
-## [Output 3]()
+## [Output 3](https://github.com/rajashekarkasturi/RTweekend/tree/88a1f98436a4f09d9745105d3217cfb7196f984d)
 Rendering of Sphere by setting the RayDirection, RayOrigin using the PerPixel method which was re-structured earlier to work like a Pixel shader.
 * Focus Area
     ```

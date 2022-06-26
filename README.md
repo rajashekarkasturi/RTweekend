@@ -11,6 +11,15 @@ Rendering of Random RGBA pixels in Real-time using [Walnut](https://github.com/T
     ```
     ![Random RGB Render](/assets/images/RandomRenderRGB.PNG "Random RGBA")
 
+## Output 2
+Rendering of uv co-ordinate mechanism using Red and Green channels and restrucuted code to work more like a Pixel shader ([shadertoy](https://www.shadertoy.com/view/7scBz7))
+
+* Focus Area
+    ```
+    Renderer.cpp, Renderer::PerPixel();
+    Renderer.hpp
+    ```
+    ![Pixel Coordinates RG Channels](/assets/images/PixelationUVCoordinates.png)
 
 ## Credits
 ### Walnut App Template

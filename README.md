@@ -1,7 +1,7 @@
 # Ray Tracing
 This is a Hands-on Implementation of Ray Tracing from scratch.
 
-## Output 1
+## [Output 1](https://github.com/rajashekarkasturi/RTweekend/tree/b3c1bf220b838ce092d41051aca96c856ba9dd01)
 Rendering of Random RGBA pixels in Real-time using [Walnut](https://github.com/TheCherno/Walnut), ImGui and the Vulkan API.
 * Specifying the Image_data and passing it to the Viewport in our sample rendering Application.
 * Focus Area
@@ -11,7 +11,7 @@ Rendering of Random RGBA pixels in Real-time using [Walnut](https://github.com/T
     ```
     ![Random RGB Render](/assets/images/RandomRenderRGB.PNG "Random RGBA")
 
-## Output 2
+## [Output 2](https://github.com/rajashekarkasturi/RTweekend/tree/a4f5e609ffc351f5c17af4dabd3da37062941467)
 Rendering of uv co-ordinate mechanism using Red and Green channels and restrucuted code to work more like a Pixel shader ([shadertoy](https://www.shadertoy.com/view/7scBz7))
 
 * Focus Area
@@ -20,6 +20,15 @@ Rendering of uv co-ordinate mechanism using Red and Green channels and restrucut
     Renderer.hpp
     ```
     ![Pixel Coordinates RG Channels](/assets/images/PixelationUVCoordinates.png)
+
+## [Output 3]()
+Rendering of Sphere by setting the RayDirection, RayOrigin using the PerPixel method which was re-structured earlier to work like a Pixel shader.
+* Focus Area
+    ```
+    Renderer.cpp, Renderer::PerPixel();
+    ```
+    ![basic_sphere](/assets/images/RayTraced-sphere1.png)
+
 
 ## Credits
 ### Walnut App Template

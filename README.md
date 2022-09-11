@@ -29,6 +29,13 @@ Rendering of Sphere by setting the RayDirection, RayOrigin using the PerPixel me
     ```
     ![basic_sphere](/assets/images/RayTraced-sphere1.png)
 
+## [Output 4](https://github.com/rajashekarkasturi/RTweekend)
+Rendering of Sphere, focusing on Normals, Lighting and RGBA(0-1) convention for coloring using glm.
+* Focus Area
+    ```
+    File-> Renderer.cpp, Functions-> Utils::ConvertToRGBA(), Renderer::PerPixel(), Lines 85-98;
+    ```
+    ![Lighting_sphere_rt](/assets/images/Lighting_Shading_rt.PNG)
 
 ## Credits
 ### Walnut App Template

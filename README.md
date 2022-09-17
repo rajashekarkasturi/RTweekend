@@ -1,9 +1,9 @@
 # Ray Tracing
-This is a Hands-on Implementation of Ray Tracing from scratch.
+This repository contains Implementation of Ray Tracing from scratch.
 
 ## [Output 1](https://github.com/rajashekarkasturi/RTweekend/tree/b3c1bf220b838ce092d41051aca96c856ba9dd01)
 Rendering of Random RGBA pixels in Real-time using [Walnut](https://github.com/TheCherno/Walnut), ImGui and the Vulkan API.
-* Specifying the Image_data and passing it to the Viewport in our sample rendering Application.
+* Specifying the Image_data and passing it to the Viewport in our sample Rendering application.
 * Focus Area
     ``` 
     RTweekend/src/BasicRenderMain.cpp
@@ -29,13 +29,22 @@ Rendering of Sphere by setting the RayDirection, RayOrigin using the PerPixel me
     ```
     ![basic_sphere](/assets/images/RayTraced-sphere1.png)
 
-## [Output 4](https://github.com/rajashekarkasturi/RTweekend)
+## [Output 4](https://github.com/rajashekarkasturi/RTweekend/tree/ffdaebdac500b3b356fb25e49231bbb379e98c4a)
 Rendering of Sphere, focusing on Normals, Lighting and RGBA(0-1) convention for coloring using glm.
 * Focus Area
     ```
     File-> Renderer.cpp, Functions-> Utils::ConvertToRGBA(), Renderer::PerPixel(), Lines 85-98;
     ```
     ![Lighting_sphere_rt](/assets/images/Lighting_Shading_rt.PNG)
+
+
+## [Output 5](https://github.com/rajashekarkasturi/RTweekend)
+Real-time Rendering of Sphere with Keyboard and Mouse events.
+* Focus Area
+    ```
+    Renderer::PerPixel() -> Renderer::TraceRay(), Camera.cpp, Camera.h, Ray.h
+    Camera::RecalculateRayDirections();  // Moving from Clip space to World space
+    ```
 
 ## Credits
 ### Walnut App Template

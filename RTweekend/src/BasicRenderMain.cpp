@@ -68,7 +68,6 @@ public:
 		}
 		ImGui::End();
 
-
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
 		ImGui::Begin("Viewport");
 
@@ -109,7 +108,8 @@ private:
 	Camera m_Camera;
 	Scene m_Scene;
 	uint32_t m_ViewportWidth = 0, m_ViewportHeight = 0;
-	
+	int m_numberofSpheres = 1;
+
 	float m_lastRenderTime = 0.0f;
 };
 

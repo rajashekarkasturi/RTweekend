@@ -2,14 +2,17 @@
 This repository contains Implementation of Ray Tracing from scratch.
 
 ## [Latest](https://github.com/rajashekarkasturi/RTweekend)
-Real-time Rendering of multiple spheres interactively with ImGUI.
+The whole code is restructured to work more like Raytracing shaders.
+* Added some lighting to the spheres while shooting rays by invoking TraceRay() functionality from PerPixel(). 
 * Focus Area
     ```
-    Scene.h
-    Renderer::Render(), Renderer::TraceRay() -> Finding out the closestSphere and hitDistances.
-    BasicRenderMain:: -> ExampleLayer's constructor(adding of spheres), OnUIRender(Interaction with Spheres in Realtime)
+    RTweekend/src/Renderer.cpp
+    PerPixel(); TraceRay();
+    ClosestHit();
+    Miss();
     ```
-    ![Rendering_Multiple_Spheres](/assets//images/RT-multipleSpheres.png)
+    ![RT-raybounce-basic-reflection](/assets//images/RT-Raybouncing-basic-reflection.png)
+
 
 ## [Output 1](https://github.com/rajashekarkasturi/RTweekend/tree/b3c1bf220b838ce092d41051aca96c856ba9dd01)
 Rendering of Random RGBA pixels in Real-time using [Walnut](https://github.com/TheCherno/Walnut), ImGui and the Vulkan API.
@@ -55,6 +58,16 @@ Real-time Rendering of Sphere with Keyboard and Mouse events.
     Renderer::PerPixel() -> Renderer::TraceRay(), Camera.cpp, Camera.h, Ray.h
     Camera::RecalculateRayDirections();  // Moving from Clip space to World space
     ```
+
+## [Output 6](https://github.com/rajashekarkasturi/RTweekend/tree/d582a6c8b5eaef53472454ece3999b0390fcc27d)
+Real-time Rendering of multiple spheres interactively with ImGUI.
+* Focus Area
+    ```
+    Scene.h
+    Renderer::Render(), Renderer::TraceRay() -> Finding out the closestSphere and hitDistances.
+    BasicRenderMain:: -> ExampleLayer's constructor(adding of spheres), OnUIRender(Interaction with Spheres in Realtime)
+    ```
+    ![Rendering_Multiple_Spheres](/assets//images/RT-multipleSpheres.png)
 
 ## Credits
 ### Walnut App Template

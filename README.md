@@ -2,16 +2,19 @@
 This repository contains Implementation of Ray Tracing from scratch.
 
 ## [Latest](https://github.com/rajashekarkasturi/RTweekend)
-The whole code is restructured to work more like Raytracing shaders.
-* Added some lighting to the spheres while shooting rays by invoking TraceRay() functionality from PerPixel(). 
-* Focus Area
+Added behavioural lightning to sphere based on material system which are now mapped to spheres Individually, Earlier I was unfortunately running on Debug Build, so changed it to Release.
+* Specifying the materials Individually
     ```
-    RTweekend/src/Renderer.cpp
-    PerPixel(); TraceRay();
-    ClosestHit();
-    Miss();
+    src/BasicRendererMain.cpp // L 21-42
+    src/Scene.h 
     ```
-    ![RT-raybounce-basic-reflection](/assets//images/RT-Raybouncing-basic-reflection.png)
+* Reflected rays property is changed by simulating the World's Normal, [microfacet](https://www.pbr-book.org/3ed-2018/Reflection_Models/Microfacet_Models) .
+    ```
+    src/Renderer.cpp // L 103
+    ```
+    ![Materialism](/assets/images/materials_PBR_1.png)
+
+    ![Materialism](/assets/images/materials_PBR_2.png)
 
 
 ## [Output 1](https://github.com/rajashekarkasturi/RTweekend/tree/b3c1bf220b838ce092d41051aca96c856ba9dd01)
@@ -68,6 +71,18 @@ Real-time Rendering of multiple spheres interactively with ImGUI.
     BasicRenderMain:: -> ExampleLayer's constructor(adding of spheres), OnUIRender(Interaction with Spheres in Realtime)
     ```
     ![Rendering_Multiple_Spheres](/assets//images/RT-multipleSpheres.png)
+
+## [Output 6](https://github.com/rajashekarkasturi/RTweekend/tree/045263854eab5e678c9f28499eb50502ce60fd21)
+The whole code is restructured to work more like Raytracing shaders.
+* Added some lighting to the spheres while shooting rays by invoking TraceRay() functionality from PerPixel(). 
+* Focus Area
+    ```
+    RTweekend/src/Renderer.cpp
+    PerPixel(); TraceRay();
+    ClosestHit();
+    Miss();
+    ```
+    ![RT-raybounce-basic-reflection](/assets//images/RT-Raybouncing-basic-reflection.png)
 
 ## Credits
 ### Walnut App Template

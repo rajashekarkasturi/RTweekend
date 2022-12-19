@@ -69,14 +69,14 @@ glm::vec4 Renderer::PerPixel(uint32_t x, uint32_t y)
 	glm::vec3 color(0.0f);
 	float multiplier = 1.0f;
 
-	int bounces = 2;
+	int bounces = 5;
 	
 	for (int i = 0 ; i < bounces; i++)
 	{
 		Renderer::HitPayload payload = TraceRay(ray);
 		if (payload.hitDistance < 0.0f)
 		{
-			glm::vec3 skyColor = glm::vec3(0.0f, 0.0f, 0.0f);
+			glm::vec3 skyColor = glm::vec3(0.6f, 0.7f, 0.9f);
 			color += skyColor * multiplier;
 			break;
 		}
@@ -88,17 +88,20 @@ glm::vec4 Renderer::PerPixel(uint32_t x, uint32_t y)
 		//lightIntensity calculation
 		float lightIntensity = glm::max(glm::dot(payload.WorldNormal, -lightDirection), 0.0f);
 
-		const Sphere& sphere = m_ActiveScene->Speheres[payload.ObjectIndex];
-		glm::vec3 sphereColor = sphere.Albedo;
+		const Sphere& sphere = m_ActiveScene->Spheres[payload.ObjectIndex];
+		const Material& material = m_ActiveScene->Materials[sphere.MaterialIndex];
+
+		glm::vec3 sphereColor = material.Albedo;
 		sphereColor *= lightIntensity;
 		color += sphereColor * multiplier;
 
-		multiplier += 0.7f;
+		multiplier *= 0.5f;
 
 
 		//Now after bouncing the Origin and RayDirections need to be changed
 		ray.Origin = payload.WorldPosition + payload.WorldNormal * 0.0001f;
-		ray.Direction = glm::reflect(ray.Direction, payload.WorldNormal);
+		ray.Direction = glm::reflect(ray.Direction, 
+			payload.WorldNormal + material.Roughness * Walnut::Random::Vec3(-0.5f, 0.5f));
 
 	}
 
@@ -118,10 +121,10 @@ Renderer::HitPayload Renderer::TraceRay(const Ray& ray)
 	int closestSphere = -1;
 	float hitDistance =  std::numeric_limits<float>::max(); // FLT_MAX;
 
-	for (size_t i = 0 ; i <  m_ActiveScene->Speheres.size(); i++) 
+	for (size_t i = 0 ; i <  m_ActiveScene->Spheres.size(); i++) 
 	{
 		
-		const Sphere& sphere = m_ActiveScene->Speheres[i];
+		const Sphere& sphere = m_ActiveScene->Spheres[i];
 
 		glm::vec3 origin = ray.Origin - sphere.Position;
 
@@ -164,7 +167,9 @@ Renderer::HitPayload Renderer::ClosestHit(const Ray& ray, float hitDistance, int
 	payload.hitDistance = hitDistance;
 	payload.ObjectIndex = objectIndex;
 	
-	const Sphere& closestSphere = m_ActiveScene->Speheres[objectIndex];
+	const Sphere& closestSphere = m_ActiveScene->Spheres[objectIndex];
+
+	//const Sphere& closestSphere = m_ActiveScene->Speheres[objectIndex];
 
 	glm::vec3 origin = ray.Origin - closestSphere.Position;
 	payload.WorldPosition = origin + ray.Direction * hitDistance;

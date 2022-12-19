@@ -25,7 +25,7 @@ Rendering of Random RGBA pixels in Real-time using [Walnut](https://github.com/T
     RTweekend/src/BasicRenderMain.cpp
     Render();
     ```
-    ![Random RGB Render](/assets/images/RandomRenderRGB.PNG "Random RGBA")
+    ![Random RGB Render](/assets/images/RandomRenderRGB.PNG)
 
 ## [Output 2](https://github.com/rajashekarkasturi/RTweekend/tree/a4f5e609ffc351f5c17af4dabd3da37062941467)
 Rendering of uv co-ordinate mechanism using Red and Green channels and restrucuted code to work more like a Pixel shader ([shadertoy](https://www.shadertoy.com/view/7scBz7))

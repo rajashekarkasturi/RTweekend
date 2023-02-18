@@ -2,19 +2,14 @@
 This repository contains Implementation of Ray Tracing from scratch.
 
 ## [Latest](https://github.com/rajashekarkasturi/RTweekend)
-Added behavioural lightning to sphere based on material system which are now mapped to spheres Individually, Earlier I was unfortunately running on Debug Build, so changed it to Release.
-* Specifying the materials Individually
+PathTracing: Accumulated Color of the outgoing rays after first reflection.
+*   ```
+    src/Renderer.cpp // L 58-68
     ```
-    src/BasicRendererMain.cpp // L 21-42
-    src/Scene.h 
-    ```
-* Reflected rays property is changed by simulating the World's Normal, [microfacet](https://www.pbr-book.org/3ed-2018/Reflection_Models/Microfacet_Models) .
-    ```
-    src/Renderer.cpp // L 103
-    ```
-    ![Materialism](/assets/images/materials_PBR_1.png)
-
-    ![Materialism](/assets/images/materials_PBR_2.png)
+* Without Pathtracing
+    ![without_PT](/assets/images/Without_Pathtracing.PNG)
+* With Pathtracing
+    ![with_PT](/assets/images/PT_Accumulated.PNG)
 
 
 ## [Output 1](https://github.com/rajashekarkasturi/RTweekend/tree/b3c1bf220b838ce092d41051aca96c856ba9dd01)
@@ -83,6 +78,21 @@ The whole code is restructured to work more like Raytracing shaders.
     Miss();
     ```
     ![RT-raybounce-basic-reflection](/assets//images/RT-Raybouncing-basic-reflection.png)
+
+## [Output 7](https://github.com/rajashekarkasturi/RTweekend/tree/666f1f62826ffd9dcdab6f389f1f85e424879234)
+Added behavioural lightning to sphere based on material system which are now mapped to spheres Individually, Earlier I was unfortunately running on Debug Build, so changed it to Release.
+* Specifying the materials Individually
+    ```
+    src/BasicRendererMain.cpp // L 21-42
+    src/Scene.h 
+    ```
+* Reflected rays property is changed by simulating the World's Normal, [microfacet](https://www.pbr-book.org/3ed-2018/Reflection_Models/Microfacet_Models) .
+    ```
+    src/Renderer.cpp // L 103
+    ```
+    ![Materialism](/assets/images/materials_PBR_1.png)
+
+    ![Materialism](/assets/images/materials_PBR_2.png)
 
 ## Credits
 ### Walnut App Template

@@ -2,15 +2,14 @@
 This repository contains Implementation of Ray Tracing from scratch.
 
 ## [Latest](https://github.com/rajashekarkasturi/RTweekend)
-PathTracing: Accumulated Color of the outgoing rays after first reflection.
+Added multithreading using [for_each](https://en.cppreference.com/w/cpp/algorithm/for_each) with the execution policy of [parallel](https://en.cppreference.com/w/cpp/algorithm/execution_policy_tag_t).
 *   ```
-    src/Renderer.cpp // L 58-68
+    src/Renderer.cpp // L 60-80
     ```
-* Without Pathtracing
-    ![without_PT](/assets/images/Without_Pathtracing.PNG)
-* With Pathtracing
-    ![with_PT](/assets/images/PT_Accumulated.PNG)
-
+* Without Multithreading
+    ![without_MT](/assets/images/PT_Accumulated.PNG)
+* With Multithreading
+    ![with_MT](/assets/images/PT_MT.PNG)
 
 ## [Output 1](https://github.com/rajashekarkasturi/RTweekend/tree/b3c1bf220b838ce092d41051aca96c856ba9dd01)
 Rendering of Random RGBA pixels in Real-time using [Walnut](https://github.com/TheCherno/Walnut), ImGui and the Vulkan API.
@@ -67,7 +66,7 @@ Real-time Rendering of multiple spheres interactively with ImGUI.
     ```
     ![Rendering_Multiple_Spheres](/assets//images/RT-multipleSpheres.png)
 
-## [Output 6](https://github.com/rajashekarkasturi/RTweekend/tree/045263854eab5e678c9f28499eb50502ce60fd21)
+## [Output 7](https://github.com/rajashekarkasturi/RTweekend/tree/045263854eab5e678c9f28499eb50502ce60fd21)
 The whole code is restructured to work more like Raytracing shaders.
 * Added some lighting to the spheres while shooting rays by invoking TraceRay() functionality from PerPixel(). 
 * Focus Area
@@ -79,7 +78,7 @@ The whole code is restructured to work more like Raytracing shaders.
     ```
     ![RT-raybounce-basic-reflection](/assets//images/RT-Raybouncing-basic-reflection.png)
 
-## [Output 7](https://github.com/rajashekarkasturi/RTweekend/tree/666f1f62826ffd9dcdab6f389f1f85e424879234)
+## [Output 8](https://github.com/rajashekarkasturi/RTweekend/tree/666f1f62826ffd9dcdab6f389f1f85e424879234)
 Added behavioural lightning to sphere based on material system which are now mapped to spheres Individually, Earlier I was unfortunately running on Debug Build, so changed it to Release.
 * Specifying the materials Individually
     ```
@@ -93,6 +92,16 @@ Added behavioural lightning to sphere based on material system which are now map
     ![Materialism](/assets/images/materials_PBR_1.png)
 
     ![Materialism](/assets/images/materials_PBR_2.png)
+
+## [Output 9](https://github.com/rajashekarkasturi/RTweekend/tree/c5b1a953cdc1c05451d6452e610e6f136a143fb2)
+PathTracing: Accumulated Color of the outgoing rays after first reflection.
+*   ```
+    src/Renderer.cpp // L 58-68
+    ```
+* Without Pathtracing
+    ![without_PT](/assets/images/Without_Pathtracing.PNG)
+* With Pathtracing
+    ![with_PT](/assets/images/PT_Accumulated.PNG)
 
 ## Credits
 ### Walnut App Template
